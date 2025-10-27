@@ -1,4 +1,4 @@
-import poemsData from '../poems.json' assert { type: 'json' };
+const poemsData = require('../poems.json');
 
 export default function handler(req, res) {
   let html = `
