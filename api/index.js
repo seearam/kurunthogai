@@ -6,7 +6,7 @@ export default function handler(req, res) {
   <html lang="ta">
   <head>
     <meta charset="UTF-8">
-    <title>குறுந்தொகை (Kurunthogai Poems)</title>
+    <title>குறுந்தொகை</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet">
     <style>
       body { 
