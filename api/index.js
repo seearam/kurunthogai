@@ -52,13 +52,26 @@ export default function handler(req, res) {
       }
       .poet { font-weight: bold; margin-top: 10px; }
       .thinai { font-style: italic; color: #333; }
+      .search-container {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+#searchBox {
+  padding: 8px;
+  width: 250px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
     </style>
   </head>
   <body>
     <h1>குறுந்தொகை</h1>
    <!-- ✅ Search box -->
-    <input type="text" id="searchBox" placeholder="பாடல் எண், கவிஞர், திணை அல்லது வரிகளைத் தேட...">
-
+   <div class="search-container">
+  <input type="text" id="searchBox" placeholder="தேடு...">
+</div>
     `;
 
   poemsData.KurunthogaiPoems.forEach(poem => {
