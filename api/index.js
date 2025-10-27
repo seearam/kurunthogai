@@ -56,7 +56,10 @@ export default function handler(req, res) {
   </head>
   <body>
     <h1>குறுந்தொகை</h1>
-  `;
+   <!-- ✅ Search box -->
+    <input type="text" id="searchBox" placeholder="பாடல் எண், கவிஞர், திணை அல்லது வரிகளைத் தேட...">
+
+    `;
 
   poemsData.KurunthogaiPoems.forEach(poem => {
     html += `
@@ -78,6 +81,13 @@ export default function handler(req, res) {
           panel.style.display = (panel.style.display === "block") ? "none" : "block";
         });
       }
+         // ✅ Search logic
+      document.getElementById('searchBox').addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        document.querySelectorAll('.poem-block').forEach(block => {
+          block.style.display = block.innerText.toLowerCase().includes(query) ? '' : 'none';
+        });
+      });
     </script>
   </body>
   </html>
