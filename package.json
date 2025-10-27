@@ -2,6 +2,9 @@
   "name": "kurunthogai-vercel",
   "version": "1.0.0",
   "main": "api/index.js",
+   "rewrites": [
+    { "source": "/", "destination": "/api" }
+  ],
   "scripts": {
     "start": "vercel dev"
   },
