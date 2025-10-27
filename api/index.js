@@ -1,16 +1,6 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const PORT = 3000;
+const poemsData = require('../poems.json');
 
-// Serve static files like background images
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Load JSON data
-const poemsData = require('./poems.json');
-
-// Serve HTML page
-app.get('/', (req, res) => {
+export default function handler(req, res) {
   let html = `
   <!DOCTYPE html>
   <html lang="ta">
@@ -21,7 +11,7 @@ app.get('/', (req, res) => {
     <style>
       body { 
         font-family: 'Noto Serif Tamil', serif;
-        background-image: url('background.jpg'); /* Place an image as public/background.jpg */
+        background-image: url('/background.jpg'); 
         background-size: cover;
         background-attachment: fixed;
         margin: 0;
@@ -60,14 +50,8 @@ app.get('/', (req, res) => {
         border-radius: 0 0 8px 8px;
         margin-bottom: 10px;
       }
-      .poet {
-        font-weight: bold;
-        margin-top: 10px;
-      }
-      .thinai {
-        font-style: italic;
-        color: #333;
-      }
+      .poet { font-weight: bold; margin-top: 10px; }
+      .thinai { font-style: italic; color: #333; }
     </style>
   </head>
   <body>
@@ -100,9 +84,6 @@ app.get('/', (req, res) => {
   </html>
   `;
 
-  res.send(html);
-});
-
-app.listen(PORT, () => {
-  console.log(\`Server is running on http://localhost:\${PORT}\`);
-});
+  res.setHeader('Content-Type', 'text/html');
+  res.status(200).send(html);
+}
