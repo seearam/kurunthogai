@@ -1,4 +1,4 @@
-const poemsData = require('../poems.json');
+import poemsData from '../poems.json' assert { type: 'json' };
 
 export default function handler(req, res) {
   let html = `
@@ -60,11 +60,10 @@ export default function handler(req, res) {
 
   poemsData.KurunthogaiPoems.forEach(poem => {
     html += `
-      <button class="accordion">பாடல்  ${poem.index} - ${poem.poet_name} (${poem.poem_thinai_type})</button>
+      <button class="accordion">பாடல் ${poem.index} - ${poem.poet_name} (${poem.poem_thinai_type})</button>
       <div class="panel">
         <p>${poem.poem_verses}</p>
         <p class="poet">கவிஞர்: ${poem.poet_name}</p>
-        <p class="thinai">திணை: ${poem.poem_thinai_type}</p>
       </div>
     `;
   });
