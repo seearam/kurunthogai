@@ -60,7 +60,7 @@ export default function handler(req, res) {
 
   poemsData.KurunthogaiPoems.forEach(poem => {
     html += `
-      <button class="accordion">பா ${poem.index} - ${poem.poet_name}</button>
+      <button class="accordion">பாடல்  ${poem.index} - ${poem.poet_name} (${poem.poem_thinai_type})</button>
       <div class="panel">
         <p>${poem.poem_verses}</p>
         <p class="poet">கவிஞர்: ${poem.poet_name}</p>
