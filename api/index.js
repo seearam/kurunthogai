@@ -55,7 +55,7 @@ export default function handler(req, res) {
     </style>
   </head>
   <body>
-    <h1>குறுந்தொகை (Kurunthogai Poems)</h1>
+    <h1>குறுந்தொகை</h1>
   `;
 
   poemsData.KurunthogaiPoems.forEach(poem => {
