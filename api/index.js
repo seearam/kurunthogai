@@ -62,11 +62,12 @@ export default function handler(req, res) {
     `;
 
   poemsData.KurunthogaiPoems.forEach(poem => {
-    html += `
+    html += `  <div class="poem-block">  
       <button class="accordion">பாடல் ${poem.index} - ${poem.poet_name} (${poem.poem_thinai_type})</button>
       <div class="panel">
         <p>${poem.poem_verses.replace(/\n/g, '<br>')}</>
         <p class="poet">கவிஞர்: ${poem.poet_name}</p>
+      </div>
       </div>
     `;
   });
